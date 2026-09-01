@@ -8,7 +8,7 @@
 
   body {
     background-color: #0c0c0e;
-    color: #f5f0e8;
+    color: #f7f1e4;
     font-family: var(--font-body);
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -18,22 +18,27 @@
 
   h1, h2, h3, h4, .font-serif-luxury {
     font-family: var(--font-heading);
+    letter-spacing: -0.01em;
   }
 }
 
-/* Custom Luxury Color Utilities */
-.bg-obsidian-950 { background-color: #08080a; }
-.bg-obsidian-900 { background-color: #0f0f13; }
-.bg-obsidian-850 { background-color: #141419; }
-.bg-obsidian-800 { background-color: #1a1a22; }
+/* Warm Luxury Palette & Obsidian Utilities */
+.bg-obsidian-950 { background-color: #09090b; }
+.bg-obsidian-900 { background-color: #111115; }
+.bg-obsidian-850 { background-color: #17171f; }
+.bg-obsidian-800 { background-color: #1e1e28; }
 
-.bg-ruby-950 { background-color: #4a0510; }
-.bg-ruby-900 { background-color: #6b0c1a; }
+.bg-charcoal-900 { background-color: #121216; }
+.bg-charcoal-800 { background-color: #181820; }
+.bg-charcoal-700 { background-color: #22222d; }
+
+.bg-ruby-950 { background-color: #3b060f; }
+.bg-ruby-900 { background-color: #5b0e1b; }
 .bg-ruby-800 { background-color: #8c1122; }
 .bg-ruby-700 { background-color: #b3162a; }
 
-.text-gold-300 { color: #f9e7b2; }
-.text-gold-400 { color: #e6ca7d; }
+.text-gold-300 { color: #fce09b; }
+.text-gold-400 { color: #f0cb67; }
 .text-gold-500 { color: #d4af37; }
 .text-gold-600 { color: #b89228; }
 
@@ -41,36 +46,32 @@
 .text-cream-200 { color: #f7f1e4; }
 .text-cream-300 { color: #ebdcc5; }
 
-.border-gold-500\/20 { border-color: rgba(212, 175, 55, 0.2); }
-.border-gold-500\/30 { border-color: rgba(212, 175, 55, 0.3); }
-.border-gold-500\/50 { border-color: rgba(212, 175, 55, 0.5); }
-
 /* Luxury Gradients */
 .bg-gold-gradient {
   background: linear-gradient(135deg, #fce09b 0%, #d4af37 50%, #aa8218 100%);
 }
 
 .text-gold-gradient {
-  background: linear-gradient(135deg, #fff2c6 0%, #e5c058 50%, #b89028 100%);
+  background: linear-gradient(135deg, #fff2c6 0%, #f0cb67 45%, #d4af37 75%, #aa8218 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .bg-ruby-gradient {
-  background: linear-gradient(135deg, #8c1122 0%, #500812 100%);
+  background: linear-gradient(135deg, #8c1122 0%, #4a0510 100%);
 }
 
 .bg-card-gradient {
-  background: linear-gradient(180deg, rgba(26, 26, 34, 0.85) 0%, rgba(15, 15, 19, 0.95) 100%);
+  background: linear-gradient(180deg, rgba(24, 24, 32, 0.85) 0%, rgba(15, 15, 20, 0.95) 100%);
 }
 
 .bg-hero-gradient {
-  background: linear-gradient(180deg, rgba(12, 12, 14, 0.4) 0%, rgba(12, 12, 14, 0.85) 70%, rgba(12, 12, 14, 1) 100%);
+  background: linear-gradient(180deg, rgba(12, 12, 14, 0.3) 0%, rgba(12, 12, 14, 0.8) 60%, rgba(12, 12, 14, 1) 100%);
 }
 
-/* Glassmorphism */
+/* Glassmorphism & Luxury Cards */
 .glass-panel {
-  background: rgba(18, 18, 24, 0.75);
+  background: rgba(18, 18, 24, 0.8);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(212, 175, 55, 0.15);
@@ -80,18 +81,19 @@
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .glass-panel-hover:hover {
-  background: rgba(26, 26, 34, 0.85);
-  border-color: rgba(212, 175, 55, 0.35);
-  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.8), 0 0 20px 0 rgba(212, 175, 55, 0.15);
+  background: rgba(26, 26, 35, 0.9);
+  border-color: rgba(212, 175, 55, 0.38);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.85), 0 0 24px 0 rgba(212, 175, 55, 0.18);
+  transform: translateY(-2px);
 }
 
 /* Gold glow effect */
 .glow-gold {
-  box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 30px -5px rgba(212, 175, 55, 0.35);
 }
 
 .glow-ruby {
-  box-shadow: 0 0 25px -5px rgba(179, 22, 42, 0.4);
+  box-shadow: 0 0 30px -5px rgba(179, 22, 42, 0.45);
 }
 
 /* Custom Scrollbar */
@@ -105,7 +107,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2a2a35;
+  background: #2a2a38;
   border-radius: 4px;
   border: 2px solid #09090b;
 }
@@ -121,26 +123,16 @@
 }
 
 .animate-shimmer {
-  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(212,175,55,0.15) 50%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(212,175,55,0.2) 50%, rgba(255,255,255,0) 100%);
   background-size: 200% 100%;
   animation: shimmer 3s infinite;
 }
 
-/* Pulse animation for spices */
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-8px) rotate(3deg); }
-}
-
-.animate-float {
-  animation: float 5s ease-in-out infinite;
-}
-
 @keyframes pulseSlow {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.05); }
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 0.65; transform: scale(1.03); }
 }
 
 .animate-pulse-slow {
-  animation: pulseSlow 4s ease-in-out infinite;
+  animation: pulseSlow 5s ease-in-out infinite;
 }

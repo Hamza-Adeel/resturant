@@ -11,12 +11,12 @@ export default function MobileFloatingBar() {
   const { itemCount, setIsOpen } = useCart();
 
   return (
-    <div className="fixed bottom-0 inset-x-0 z-40 lg:hidden bg-[#0c0c10]/95 backdrop-blur-xl border-t border-amber-500/20 px-3 py-2 shadow-2xl">
+    <div className="fixed bottom-0 inset-x-0 z-40 lg:hidden bg-[#0e0e14]/98 backdrop-blur-xl border-t border-amber-500/20 px-3 py-1.5 shadow-2xl">
       <div className="grid grid-cols-5 gap-1 items-center max-w-md mx-auto text-center">
         {/* Home */}
         <Link
           href="/"
-          className={`flex flex-col items-center justify-center py-1 rounded-xl transition-colors ${
+          className={`flex flex-col items-center justify-center min-h-[44px] rounded-xl transition-colors ${
             pathname === '/' ? 'text-amber-400 font-semibold' : 'text-zinc-400 hover:text-zinc-200'
           }`}
         >
@@ -27,7 +27,7 @@ export default function MobileFloatingBar() {
         {/* Menu */}
         <Link
           href="/menu"
-          className={`flex flex-col items-center justify-center py-1 rounded-xl transition-colors ${
+          className={`flex flex-col items-center justify-center min-h-[44px] rounded-xl transition-colors ${
             pathname === '/menu' ? 'text-amber-400 font-semibold' : 'text-zinc-400 hover:text-zinc-200'
           }`}
         >
@@ -38,7 +38,7 @@ export default function MobileFloatingBar() {
         {/* Floating Cart Trigger */}
         <button
           onClick={() => setIsOpen(true)}
-          className="relative -top-3 flex flex-col items-center justify-center w-12 h-12 mx-auto rounded-full bg-gradient-to-tr from-red-700 via-red-800 to-amber-600 text-white shadow-lg shadow-red-950/60 border-2 border-amber-400/40 active:scale-95 transition-transform"
+          className="relative -top-3 flex flex-col items-center justify-center w-12 h-12 mx-auto rounded-full bg-gradient-to-tr from-red-700 via-red-800 to-amber-600 text-white shadow-lg shadow-red-950/60 border-2 border-amber-400/40 active:scale-95 transition-transform cursor-pointer"
           aria-label="Open Shopping Cart"
         >
           <ShoppingBag className="w-5 h-5 text-amber-200" />
@@ -52,7 +52,7 @@ export default function MobileFloatingBar() {
         {/* Reservations */}
         <Link
           href="/reservations"
-          className={`flex flex-col items-center justify-center py-1 rounded-xl transition-colors ${
+          className={`flex flex-col items-center justify-center min-h-[44px] rounded-xl transition-colors ${
             pathname === '/reservations' ? 'text-amber-400 font-semibold' : 'text-zinc-400 hover:text-zinc-200'
           }`}
         >
@@ -63,7 +63,7 @@ export default function MobileFloatingBar() {
         {/* Call Us */}
         <a
           href="tel:+923001234567"
-          className="flex flex-col items-center justify-center py-1 rounded-xl text-zinc-400 hover:text-amber-400 transition-colors"
+          className="flex flex-col items-center justify-center min-h-[44px] rounded-xl text-zinc-400 hover:text-amber-400 transition-colors"
         >
           <Phone className="w-4 h-4 mb-0.5" />
           <span className="text-[10px] tracking-tight">Call</span>

@@ -23,6 +23,7 @@ export interface MenuItem {
   spiceLevel: SpiceLevel;
   isVegetarian?: boolean;
   isVegan?: boolean;
+  isGlutenFree?: boolean;
   isChefSpecial?: boolean;
   isPopular?: boolean;
   ingredients: string[];

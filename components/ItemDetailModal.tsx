@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { X, Heart, Plus, Minus, Flame, Clock, Users, Sparkles, AlertCircle, ShoppingBag, Check } from 'lucide-react';
 import { MenuItem, SpiceLevel } from '../lib/types';
 import { useCart } from '../context/CartContext';
@@ -68,18 +69,20 @@ export default function ItemDetailModal({ dish, isOpen, onClose }: ItemDetailMod
       <div className="relative w-full max-w-2xl bg-[#14141a] border border-amber-500/30 rounded-3xl shadow-2xl overflow-hidden z-10 my-8 animate-in zoom-in-95 duration-200">
         {/* Top Header / Image Bar */}
         <div className="relative aspect-[21/9] sm:aspect-[2/1] w-full bg-zinc-900 overflow-hidden">
-          <img
+          <Image
             src={dish.image}
             alt={dish.name}
-            className="w-full h-full object-cover"
+            fill
+            sizes="(max-width: 768px) 100vw, 672px"
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#14141a] via-[#14141a]/40 to-transparent" />
 
           {/* Close & Favorite */}
-          <div className="absolute top-4 right-4 flex items-center gap-2">
+          <div className="absolute top-4 right-4 flex items-center gap-2 z-10">
             <button
               onClick={() => toggleFavorite(dish.id, dish.name)}
-              className={`p-2.5 rounded-full backdrop-blur-md transition-colors ${
+              className={`p-2.5 rounded-full backdrop-blur-md transition-colors min-h-[40px] min-w-[40px] flex items-center justify-center cursor-pointer ${
                 favorited ? 'bg-red-600 text-white' : 'bg-black/60 text-zinc-300 hover:text-red-400'
               }`}
               aria-label="Toggle favorite"
@@ -88,7 +91,7 @@ export default function ItemDetailModal({ dish, isOpen, onClose }: ItemDetailMod
             </button>
             <button
               onClick={onClose}
-              className="p-2.5 rounded-full bg-black/60 text-zinc-300 hover:text-white hover:bg-black/80 backdrop-blur-md transition-colors"
+              className="p-2.5 rounded-full bg-black/60 text-zinc-300 hover:text-white hover:bg-black/80 backdrop-blur-md transition-colors min-h-[40px] min-w-[40px] flex items-center justify-center cursor-pointer"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
@@ -96,7 +99,7 @@ export default function ItemDetailModal({ dish, isOpen, onClose }: ItemDetailMod
           </div>
 
           {/* Category Pill */}
-          <div className="absolute bottom-4 left-6">
+          <div className="absolute bottom-4 left-6 z-10">
             <span className="text-xs font-semibold uppercase tracking-widest text-amber-400 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full border border-amber-500/30">
               {dish.category}
             </span>
