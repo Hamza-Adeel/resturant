@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Playfair_Display, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import { ToastProvider } from '../context/ToastContext';
-import { FavoritesProvider } from '../context/FavoritesContext';
 import { CartProvider } from '../context/CartContext';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -34,9 +33,7 @@ export const metadata: Metadata = {
     'Mutton Karahi',
     'BBQ Platter',
     'Butter Chicken',
-    'Table Reservations',
-    'Online Food Delivery',
-    'Catering Services'
+    'Online Food Delivery'
   ],
   authors: [{ name: 'Mirch Masala Culinary Group' }],
   openGraph: {
@@ -69,7 +66,7 @@ const restaurantSchema = {
   '@type': 'Restaurant',
   name: 'Mirch Masala',
   image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1200&auto=format&fit=crop',
-  description: 'Premium Pakistani and South Asian restaurant offering slow-simmered curries, live charcoal grills, royal dum biryani, and catering.',
+  description: 'Local Pakistani and South Asian restaurant offering slow-simmered curries, live charcoal grills, royal dum biryani, and warm hospitality.',
   servesCuisine: ['Pakistani', 'Indian', 'South Asian', 'Mughlai', 'Halal', 'Barbecue'],
   priceRange: '₨₨',
   address: {
@@ -100,8 +97,7 @@ const restaurantSchema = {
       closes: '24:00'
     }
   ],
-  menu: 'https://mirchmasala-restaurant.com/menu',
-  acceptsReservations: 'True'
+  menu: 'https://mirchmasala-restaurant.com/menu'
 };
 
 export default function RootLayout({
@@ -119,17 +115,15 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-[#0c0c0e] text-[#f5f0e8] antialiased flex flex-col selection:bg-amber-500/30 selection:text-amber-200">
         <ToastProvider>
-          <FavoritesProvider>
-            <CartProvider>
-              <Navbar />
-              <main className="flex-1 pb-16 lg:pb-0">
-                {children}
-              </main>
-              <Footer />
-              <CartDrawer />
-              <MobileFloatingBar />
-            </CartProvider>
-          </FavoritesProvider>
+          <CartProvider>
+            <Navbar />
+            <main className="flex-1 pb-16 lg:pb-0">
+              {children}
+            </main>
+            <Footer />
+            <CartDrawer />
+            <MobileFloatingBar />
+          </CartProvider>
         </ToastProvider>
       </body>
     </html>

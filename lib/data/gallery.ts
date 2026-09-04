@@ -23,13 +23,6 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     description: 'Our master ustaads roasting fresh Seekh Kebabs and Malai Boti over slow-burning natural lumpwood charcoal.'
   },
   {
-    id: 'gal-4',
-    title: 'Grand Family Wedding Feast',
-    category: 'Events',
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop',
-    description: 'Bespoke royal catering setup featuring our live karahi counters and dessert banquet tables.'
-  },
-  {
     id: 'gal-5',
     title: 'Sizzling Mutton Karahi',
     category: 'Food',
@@ -56,20 +49,6 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Food',
     image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?q=80&w=1200&auto=format&fit=crop',
     description: 'Piping hot Shahi Gulab Jamun, Zafrani Matka Kheer, and Rasmalai garnished with pistachios.'
-  },
-  {
-    id: 'gal-9',
-    title: 'Private Executive Dining Suite',
-    category: 'Interior',
-    image: 'https://images.unsplash.com/photo-1578474846511-04ba529f0b88?q=80&w=1200&auto=format&fit=crop',
-    description: 'A secluded private suite designed for corporate dinners, birthdays, and high-profile celebrations.'
-  },
-  {
-    id: 'gal-10',
-    title: 'Evening Festive Gathering',
-    category: 'Events',
-    image: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=1200&auto=format&fit=crop',
-    description: 'Guests enjoying rich conversations, shared platters, and warm hospitality at Mirch Masala.'
   },
   {
     id: 'gal-11',

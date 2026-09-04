@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { UtensilsCrossed, Calendar, ShoppingBag, Phone, Home } from 'lucide-react';
+import { UtensilsCrossed, ShoppingBag, Phone, Home } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
 export default function MobileFloatingBar() {
@@ -12,7 +12,7 @@ export default function MobileFloatingBar() {
 
   return (
     <div className="fixed bottom-0 inset-x-0 z-40 lg:hidden bg-[#0e0e14]/98 backdrop-blur-xl border-t border-amber-500/20 px-3 py-1.5 shadow-2xl">
-      <div className="grid grid-cols-5 gap-1 items-center max-w-md mx-auto text-center">
+      <div className="grid grid-cols-4 gap-1 items-center max-w-md mx-auto text-center">
         {/* Home */}
         <Link
           href="/"
@@ -48,17 +48,6 @@ export default function MobileFloatingBar() {
             </span>
           )}
         </button>
-
-        {/* Reservations */}
-        <Link
-          href="/reservations"
-          className={`flex flex-col items-center justify-center min-h-[44px] rounded-xl transition-colors ${
-            pathname === '/reservations' ? 'text-amber-400 font-semibold' : 'text-zinc-400 hover:text-zinc-200'
-          }`}
-        >
-          <Calendar className="w-4 h-4 mb-0.5" />
-          <span className="text-[10px] tracking-tight">Reserve</span>
-        </Link>
 
         {/* Call Us */}
         <a

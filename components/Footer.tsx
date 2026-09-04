@@ -148,33 +148,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/reservations" className="text-zinc-400 hover:text-amber-300 transition-colors flex items-center gap-1.5">
-                  <span>→</span> Reserve a Table
-                </Link>
-              </li>
-              <li>
                 <Link href="/order" className="text-zinc-400 hover:text-amber-300 transition-colors flex items-center gap-1.5">
                   <span>→</span> Online Food Delivery
                 </Link>
               </li>
               <li>
-                <Link href="/catering" className="text-zinc-400 hover:text-amber-300 transition-colors flex items-center gap-1.5">
-                  <span>→</span> Wedding & Event Catering
-                </Link>
-              </li>
-              <li>
                 <Link href="/offers" className="text-zinc-400 hover:text-amber-300 transition-colors flex items-center gap-1.5">
                   <span>→</span> Family Feasts & Deals
-                </Link>
-              </li>
-              <li>
-                <Link href="/gallery" className="text-zinc-400 hover:text-amber-300 transition-colors flex items-center gap-1.5">
-                  <span>→</span> Photo Gallery
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-zinc-400 hover:text-amber-300 transition-colors flex items-center gap-1.5">
-                  <span>→</span> Our Story & Heritage
                 </Link>
               </li>
               <li>
@@ -212,7 +192,7 @@ export default function Footer() {
                   <a href="tel:+923001234567" className="hover:text-cream-100 text-cream-200 font-medium">
                     +92 300 1234567
                   </a>
-                  <p className="text-[11px] text-zinc-500">Reservations & Delivery Hotline</p>
+                  <p className="text-[11px] text-zinc-500">Orders & General Enquiries</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">

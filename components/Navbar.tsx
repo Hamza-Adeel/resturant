@@ -3,14 +3,12 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ShoppingBag, Flame, Menu as MenuIcon, X, Calendar, Phone, Heart, Clock, MapPin } from 'lucide-react';
+import { ShoppingBag, Flame, Menu as MenuIcon, X, Phone } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-import { useFavorites } from '../context/FavoritesContext';
 
 export default function Navbar() {
   const pathname = usePathname();
   const { itemCount, setIsOpen } = useCart();
-  const { favorites } = useFavorites();
   
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -44,51 +42,12 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Menu', href: '/menu' },
-    { name: 'About', href: '/about' },
-    { name: 'Gallery', href: '/gallery' },
-    { name: 'Catering', href: '/catering' },
     { name: 'Offers', href: '/offers' },
     { name: 'Contact', href: '/contact' },
   ];
 
   return (
     <>
-      {/* Top Announcement & Location Bar */}
-      {!announcementDismissed && (
-        <div className="bg-gradient-to-r from-red-950 via-[#230910] to-amber-950 text-cream-100 text-xs py-2 px-4 border-b border-amber-500/20 relative z-50">
-          <div className="max-w-7xl mx-auto flex items-center justify-between">
-            <div className="flex items-center gap-2 mx-auto sm:mx-0 font-medium tracking-wide">
-              <span className="inline-flex items-center justify-center p-1 bg-amber-500/20 rounded-full text-amber-300">
-                <Flame className="w-3.5 h-3.5 animate-pulse" />
-              </span>
-              <span>
-                <strong className="text-amber-300 font-semibold">Grand South Asian Feast:</strong> Flat 10% OFF on signature curries & grills with code{' '}
-                <span className="underline decoration-amber-400 font-mono font-bold text-amber-200">MIRCH10</span>
-              </span>
-            </div>
-
-            <div className="hidden lg:flex items-center gap-4 text-[11px] text-zinc-300">
-              <span className="flex items-center gap-1">
-                <Clock className="w-3.5 h-3.5 text-amber-400" />
-                <span>Open Today: 12:00 PM – 11:00 PM</span>
-              </span>
-              <span className="text-zinc-600">•</span>
-              <span className="flex items-center gap-1">
-                <MapPin className="w-3.5 h-3.5 text-amber-400" />
-                <span>Gulberg III, Lahore</span>
-              </span>
-              <button
-                onClick={() => setAnnouncementDismissed(true)}
-                className="text-zinc-400 hover:text-white p-1 transition-colors ml-2"
-                aria-label="Dismiss announcement"
-              >
-                <X className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
       {/* Sticky Main Navigation */}
       <header
         className={`sticky top-0 z-40 transition-all duration-300 ${
@@ -141,21 +100,6 @@ export default function Navbar() {
 
           {/* Right Action Icons & Buttons */}
           <div className="flex items-center gap-2 sm:gap-3">
-            {/* Favorites Icon */}
-            <Link
-              href="/menu?filter=favorites"
-              className="relative p-2.5 rounded-xl text-zinc-300 hover:text-red-400 hover:bg-zinc-800/60 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
-              title="Saved Favorites"
-              aria-label="Saved Favorites"
-            >
-              <Heart className="w-5 h-5" />
-              {favorites.length > 0 && (
-                <span className="absolute top-1.5 right-1.5 w-4 h-4 bg-red-600 text-[10px] font-bold text-white rounded-full flex items-center justify-center shadow-sm">
-                  {favorites.length}
-                </span>
-              )}
-            </Link>
-
             {/* Cart Trigger */}
             <button
               onClick={() => setIsOpen(true)}
@@ -172,15 +116,6 @@ export default function Navbar() {
                 Cart
               </span>
             </button>
-
-            {/* Reserve Table CTA */}
-            <Link
-              href="/reservations"
-              className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-red-700 via-red-800 to-amber-700 hover:from-red-600 hover:to-amber-600 text-cream-100 text-sm font-semibold shadow-lg shadow-red-950/40 border border-amber-400/30 hover:border-amber-300 transition-all duration-300 hover:scale-[1.02] min-h-[44px]"
-            >
-              <Calendar className="w-4 h-4 text-amber-300" />
-              <span>Reserve a Table</span>
-            </Link>
 
             {/* Mobile Hamburger Button */}
             <button
@@ -219,21 +154,12 @@ export default function Navbar() {
 
                 <div className="my-3 border-t border-zinc-800/80" />
 
-                <div className="grid grid-cols-2 gap-3">
-                  <Link
-                    href="/reservations"
-                    className="flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-gradient-to-r from-red-700 to-amber-700 text-cream-100 font-semibold text-sm shadow-md min-h-[48px]"
-                  >
-                    <Calendar className="w-4 h-4 text-amber-300" />
-                    <span>Reserve Table</span>
-                  </Link>
-                  <Link
-                    href="/menu"
-                    className="flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-amber-300 font-semibold text-sm border border-amber-500/30 min-h-[48px]"
-                  >
-                    <span>Explore Menu</span>
-                  </Link>
-                </div>
+                <Link
+                  href="/menu"
+                  className="flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-amber-300 font-semibold text-sm border border-amber-500/30 min-h-[48px]"
+                >
+                  <span>Explore Menu</span>
+                </Link>
 
                 <div className="mt-4 pt-3 border-t border-zinc-800/60 flex flex-col gap-2 text-xs text-zinc-400">
                   <a

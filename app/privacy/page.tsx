@@ -4,7 +4,7 @@ import { ShieldCheck, Lock, Eye, FileText } from 'lucide-react';
 
 export const metadata = {
   title: 'Privacy Policy | Mirch Masala Restaurant',
-  description: 'Understand how Mirch Masala protects your personal information, online ordering data, and table reservation details.'
+  description: 'Understand how Mirch Masala protects your personal information and online ordering data.'
 };
 
 export default function PrivacyPage() {
@@ -31,13 +31,12 @@ export default function PrivacyPage() {
             <span>1. Information We Collect</span>
           </h2>
           <p>
-            When you interact with the Mirch Masala website, place an online delivery order, reserve a dining table, or subscribe to our newsletter, we collect certain personal identification details to deliver our services, including:
+            When you interact with the Mirch Masala website, place an online delivery order, or subscribe to our newsletter, we collect certain personal identification details to deliver our services, including:
           </p>
           <ul className="list-disc pl-5 space-y-1 text-zinc-400">
             <li><strong>Contact Details:</strong> Full Name, Email Address, and Phone Number.</li>
             <li><strong>Delivery Information:</strong> Physical delivery address and rider notes.</li>
-            <li><strong>Reservation Preferences:</strong> Preferred dining time, party size, seating zone, and special dietary/occasion requests.</li>
-            <li><strong>Order History & Favorites:</strong> Dishes added to cart, favorite bookmarks, and promotional voucher usages.</li>
+            <li><strong>Order History:</strong> Dishes added to cart and promotional voucher usages.</li>
           </ul>
         </section>
 
@@ -50,8 +49,7 @@ export default function PrivacyPage() {
           </p>
           <ul className="list-disc pl-5 space-y-1 text-zinc-400">
             <li>Processing, cooking, packaging, and dispatching food orders to your address.</li>
-            <li>Sending automated SMS/email booking confirmations and table hold reminders.</li>
-            <li>Responding to customer service inquiries and catering consultation requests.</li>
+            <li>Responding to customer service inquiries.</li>
             <li>Sharing optional seasonal specials and private tasting invitations if you subscribe to our newsletter.</li>
           </ul>
         </section>

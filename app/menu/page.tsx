@@ -1,14 +1,12 @@
 'use client';
 
-import React, { useState, useMemo, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
+import React, { useState, useMemo } from 'react';
 import {
   Search,
   SlidersHorizontal,
   Flame,
   Leaf,
   Sparkles,
-  Heart,
   Grid,
   List,
   Utensils,
@@ -17,16 +15,11 @@ import {
   X
 } from 'lucide-react';
 import { MENU_ITEMS, MENU_CATEGORIES } from '../../lib/data/menu';
-import { MenuCategory, MenuItem } from '../../lib/types';
+import { MenuCategory } from '../../lib/types';
 import DishCard from '../../components/DishCard';
-import { useFavorites } from '../../context/FavoritesContext';
 import { useCart } from '../../context/CartContext';
 
 function MenuContent() {
-  const searchParams = useSearchParams();
-  const initialFilter = searchParams.get('filter');
-
-  const { favorites } = useFavorites();
   const { addItem } = useCart();
 
   // State
@@ -40,7 +33,6 @@ function MenuContent() {
   const [filterVegan, setFilterVegan] = useState(false);
   const [filterChef, setFilterChef] = useState(false);
   const [filterPopular, setFilterPopular] = useState(false);
-  const [filterFavoritesOnly, setFilterFavoritesOnly] = useState(initialFilter === 'favorites');
   const [filterMaxPrice, setFilterMaxPrice] = useState<number>(3000);
   const [filterSpiceLevel, setFilterSpiceLevel] = useState<number | null>(null);
 
@@ -66,7 +58,6 @@ function MenuContent() {
       if (filterVegan && !dish.isVegan) return false;
       if (filterChef && !dish.isChefSpecial) return false;
       if (filterPopular && !dish.isPopular) return false;
-      if (filterFavoritesOnly && !favorites.includes(dish.id)) return false;
       if (dish.price > filterMaxPrice) return false;
       if (filterSpiceLevel !== null && dish.spiceLevel !== filterSpiceLevel) return false;
 
@@ -90,11 +81,9 @@ function MenuContent() {
     filterVegan,
     filterChef,
     filterPopular,
-    filterFavoritesOnly,
     filterMaxPrice,
     filterSpiceLevel,
     sortBy,
-    favorites
   ]);
 
   const resetAllFilters = () => {
@@ -104,7 +93,6 @@ function MenuContent() {
     setFilterVegan(false);
     setFilterChef(false);
     setFilterPopular(false);
-    setFilterFavoritesOnly(false);
     setFilterMaxPrice(3000);
     setFilterSpiceLevel(null);
     setSortBy('featured');
@@ -115,7 +103,6 @@ function MenuContent() {
     (filterVegan ? 1 : 0) +
     (filterChef ? 1 : 0) +
     (filterPopular ? 1 : 0) +
-    (filterFavoritesOnly ? 1 : 0) +
     (filterMaxPrice < 3000 ? 1 : 0) +
     (filterSpiceLevel !== null ? 1 : 0);
 
@@ -263,18 +250,6 @@ function MenuContent() {
             <span>Popular Hits</span>
           </button>
 
-          <button
-            onClick={() => setFilterFavoritesOnly(!filterFavoritesOnly)}
-            className={`px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer ${
-              filterFavoritesOnly
-                ? 'bg-rose-900 text-rose-200 border border-rose-400 shadow-sm'
-                : 'bg-zinc-900 text-zinc-400 border border-zinc-800 hover:text-zinc-200'
-            }`}
-          >
-            <Heart className="w-3.5 h-3.5" />
-            <span>Saved Favorites ({favorites.length})</span>
-          </button>
-
           {/* Spice Filter */}
           <div className="flex items-center gap-1 bg-zinc-900 border border-zinc-800 rounded-xl px-2 py-1">
             <span className="text-[11px] text-zinc-400 mr-1">Spice:</span>
@@ -404,9 +379,5 @@ function MenuContent() {
 }
 
 export default function MenuPage() {
-  return (
-    <Suspense fallback={<div className="p-16 text-center text-amber-400">Loading Mirch Masala Menu...</div>}>
-      <MenuContent />
-    </Suspense>
-  );
+  return <MenuContent />;
 }

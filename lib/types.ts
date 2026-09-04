@@ -40,18 +40,6 @@ export interface CartItem {
   selectedSpiceLevel?: SpiceLevel;
 }
 
-export interface ReservationDetails {
-  fullName: string;
-  phone: string;
-  email: string;
-  date: string;
-  time: string;
-  guests: number;
-  seatingPreference: 'Indoor Main Hall' | 'Courtyard Terrace' | 'Maharaja Private Dining';
-  specialOccasion: 'Casual Dining' | 'Birthday' | 'Anniversary' | 'Business Meeting' | 'Family Gathering' | 'Other';
-  specialRequests?: string;
-}
-
 export interface OrderDetails {
   orderId: string;
   items: CartItem[];
@@ -88,25 +76,9 @@ export interface ReviewItem {
 export interface GalleryItem {
   id: string;
   title: string;
-  category: 'Food' | 'Interior' | 'Events' | 'Kitchen';
+  category: 'Food' | 'Interior' | 'Kitchen';
   image: string;
   description: string;
-}
-
-export interface CateringPackage {
-  id: string;
-  name: string;
-  tagline: string;
-  pricePerPerson: number;
-  minGuests: number;
-  badge?: string;
-  isPopular?: boolean;
-  starters: string[];
-  mains: string[];
-  riceAndBreads: string[];
-  desserts: string[];
-  beverages: string[];
-  complimentary: string[];
 }
 
 export interface SpecialOffer {
@@ -128,7 +100,7 @@ export interface SpecialOffer {
 
 export interface FAQItem {
   id: string;
-  category: 'General & Reservations' | 'Online Orders & Delivery' | 'Dietary & Halal' | 'Catering & Events';
+  category: 'General Information' | 'Online Orders & Delivery' | 'Dietary & Halal';
   question: string;
   answer: string;
 }

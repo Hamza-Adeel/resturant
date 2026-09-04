@@ -97,7 +97,7 @@ export default function ContactPage() {
                   <a href="tel:+923001234567" className="font-mono text-amber-300 hover:underline block mt-0.5">
                     +92 300 1234567
                   </a>
-                  <p className="text-[11px] text-zinc-500">Reservations, Takeaway & Delivery Line</p>
+                  <p className="text-[11px] text-zinc-500">Takeaway & Delivery Line</p>
                 </div>
               </div>
 
@@ -256,8 +256,6 @@ export default function ContactPage() {
                       className="w-full px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-xl text-sm text-cream-100 focus:outline-none focus:border-amber-400"
                     >
                       <option value="General Inquiry">General Inquiry</option>
-                      <option value="Table Reservation Question">Table Reservation Question</option>
-                      <option value="Catering & Banquet Consultation">Catering & Banquet Consultation</option>
                       <option value="Feedback on Dining Experience">Feedback on Dining Experience</option>
                       <option value="Dietary or Allergen Inquiry">Dietary or Allergen Inquiry</option>
                     </select>
@@ -301,7 +299,7 @@ export default function ContactPage() {
                     Complimentary Valet Parking available at main entrance.
                   </p>
                 </div>
-              </div>
+              </div>  
             </div>
           </div>
         </div>

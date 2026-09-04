@@ -12,10 +12,9 @@ export default function FAQPage() {
 
   const categories = [
     'All',
-    'General & Reservations',
+    'General Information',
     'Online Orders & Delivery',
     'Dietary & Halal',
-    'Catering & Events'
   ];
 
   const filteredFAQs = useMemo(() => {
@@ -45,7 +44,7 @@ export default function FAQPage() {
           Frequently Asked Questions
         </h1>
         <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
-          Everything you need to know about our reservation guidelines, Halal sourcing, delivery coverage, and live event catering.
+          Everything you need to know about our opening hours, Halal sourcing, delivery coverage, and menu.
         </p>
       </div>
 
@@ -58,7 +57,7 @@ export default function FAQPage() {
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search questions (e.g. halal, reservations, delivery, spice)..."
+            placeholder="Search questions (e.g. halal, delivery, spice)..."
             className="w-full pl-12 pr-4 py-3.5 bg-zinc-900/90 border border-zinc-700/80 rounded-2xl text-sm text-cream-100 placeholder-zinc-500 focus:outline-none focus:border-amber-400 shadow-xl"
           />
         </div>

@@ -4,7 +4,7 @@ import { FileText, ShieldAlert, CheckCircle2 } from 'lucide-react';
 
 export const metadata = {
   title: 'Terms & Conditions | Mirch Masala Restaurant',
-  description: 'Review our terms of service, table reservation hold policies, allergen notices, online ordering terms, and catering agreements.'
+  description: 'Review our terms of service, allergen notices, and online ordering terms.'
 };
 
 export default function TermsPage() {
@@ -28,13 +28,10 @@ export default function TermsPage() {
       <div className="space-y-8 text-xs sm:text-sm text-zinc-300 leading-relaxed">
         <section className="space-y-3">
           <h2 className="text-lg font-serif-luxury font-bold text-cream-100">
-            1. Dining Reservations & Table Hold Policy
+            1. Restaurant & Order Policy
           </h2>
           <p>
-            When booking a table through our online reservation portal, we hold your designated seating area for a maximum of <strong>15 minutes</strong> past your scheduled arrival time. If your party is delayed, please notify our reception desk via phone so we can preserve your table.
-          </p>
-          <p>
-            For large banquet bookings (12+ guests) and the Maharaja Private Dining Room, special minimum spends or customized tasting menus may apply as communicated during confirmation.
+            Please contact the restaurant directly for questions about dine-in availability, takeaway, or special order requests. Online orders are subject to menu availability and kitchen capacity.
           </p>
         </section>
 
@@ -65,10 +62,10 @@ export default function TermsPage() {
 
         <section className="space-y-3">
           <h2 className="text-lg font-serif-luxury font-bold text-cream-100">
-            4. Catering Agreements & Event Cancellation
+            4. Order Changes & Cancellations
           </h2>
           <p>
-            Large-scale outdoor live catering and private corporate packages require a 50% advance deposit upon final contract signing to lock kitchen dates and live tandoor staff scheduling. The remaining balance is payable on the event date.
+            Orders may only be cancelled within 5 minutes of placement before ingredients enter the active cooking stage.
           </p>
         </section>
 

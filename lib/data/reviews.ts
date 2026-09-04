@@ -37,11 +37,11 @@ export const REVIEWS_DATA: ReviewItem[] = [
   {
     id: 'rev-4',
     name: 'Bilal Tariq',
-    role: 'Corporate Executive',
+    role: 'Regular Guest',
     avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop',
     rating: 5,
     date: 'January 15, 2026',
-    comment: 'We hosted a 30-person corporate executive dinner in their Maharaja Private Dining Room. The service was impeccable, food arrived piping hot, and our overseas guests were blown away by the Shahi Nihari and Kashmiri Pink Chai.',
+    comment: 'The service was impeccable, the food arrived piping hot, and the Shahi Nihari with Kashmiri Pink Chai made the whole meal memorable.',
     dishRecommended: 'Old Lahore Shahi Nihari & Pink Chai',
     verified: true
   },

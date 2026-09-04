@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {
   Flame,
-  Calendar,
+  ShoppingBag,
   ArrowRight,
   Star,
   Sparkles,
@@ -26,7 +26,6 @@ import { SPECIAL_OFFERS } from '../lib/data/offers';
 import { MenuCategory } from '../lib/types';
 import DishCard from '../components/DishCard';
 import LightboxModal from '../components/LightboxModal';
-import ReservationSection from '../components/ReservationSection';
 import ReviewsCarousel from '../components/ReviewsCarousel';
 import { useCart } from '../context/CartContext';
 
@@ -132,13 +131,13 @@ export default function HomePage() {
 
             {/* Above-the-fold CTA Buttons (Primary & Secondary Hierarchy) */}
             <div className="pt-3 flex flex-col sm:flex-row items-center gap-4 justify-center sm:justify-start">
-              {/* Primary: Reserve a Table (Solid High-Contrast Button) */}
+              {/* Primary: Order Online (Solid High-Contrast Button) */}
               <Link
-                href="/reservations"
+                href="/order"
                 className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-red-700 via-red-800 to-amber-600 hover:from-red-600 hover:to-amber-500 text-cream-100 font-bold text-base shadow-2xl shadow-red-950/70 border border-amber-400/40 hover:border-amber-300 transition-all duration-300 flex items-center justify-center gap-3 hover:scale-[1.03] cursor-pointer min-h-[52px]"
               >
-                <Calendar className="w-5 h-5 text-amber-300" />
-                <span>Reserve a Table</span>
+                <ShoppingBag className="w-5 h-5 text-amber-300" />
+                <span>Order Online</span>
               </Link>
 
               {/* Secondary: Explore Menu (Glassmorphism / Outlined Ghost Button) */}
@@ -263,90 +262,6 @@ export default function HomePage() {
           {signatureDishes.map((dish) => (
             <DishCard key={dish.id} dish={dish} />
           ))}
-        </div>
-      </section>
-
-      {/* ================= 4. ABOUT & HERITAGE (SPLIT SCREEN STORY) ================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Column: Visual Composition with Next.js Image */}
-          <div className="lg:col-span-6 relative">
-            <div className="relative h-[440px] sm:h-[480px] rounded-3xl overflow-hidden border border-amber-500/35 shadow-2xl">
-              <Image
-                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1000&auto=format&fit=crop"
-                alt="Mirch Masala Dining Room"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-zinc-950/85 backdrop-blur-md border border-amber-500/25">
-                <p className="text-xs text-amber-300 font-semibold uppercase tracking-wider">Heritage & Hospitality</p>
-                <p className="text-sm font-serif-luxury text-cream-100 mt-1">“Food that warms the soul and celebrates timeless South Asian dastarkhwan culture.”</p>
-              </div>
-            </div>
-
-            {/* Overlapping Floating Badge */}
-            <div className="absolute -bottom-6 -right-6 hidden sm:block p-4 rounded-2xl bg-[#171722] border border-amber-500/40 shadow-2xl max-w-xs backdrop-blur-xl">
-              <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-full bg-red-900/70 text-amber-300 flex items-center justify-center font-bold text-xl">
-                  🌶️
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-cream-100">Hand-Roasted Masalas</h4>
-                  <p className="text-[11px] text-zinc-400">Freshly ground in small batches every single dawn.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column: Narrative Storytelling */}
-          <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-amber-400 font-bold">
-              <Award className="w-4 h-4" />
-              <span>Our Culinary Heritage</span>
-            </div>
-
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif-luxury font-bold text-cream-100 leading-tight">
-              Rooted in Tradition. <br />
-              <span className="text-gold-gradient italic font-serif">Crafted for Connoisseurs.</span>
-            </h2>
-
-            <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
-              Mirch Masala was established with a single passion — honoring the rich culinary heritage of Lahore, Delhi, and Lucknow. We treat each dish as an unhurried labor of love, combining time-tested techniques with premium ingredients.
-            </p>
-
-            <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
-              From our 24-hour slow-simmered gravies to our live charcoal clay tandoor where artisanal naan is baked fresh to every order, we welcome every guest as royalty to our dastarkhwan.
-            </p>
-
-            <div className="grid grid-cols-2 gap-4 pt-2">
-              <div className="p-4 rounded-2xl bg-zinc-900/70 border border-zinc-800">
-                <h4 className="text-sm font-bold text-amber-300 font-serif-luxury">Generational Recipes</h4>
-                <p className="text-xs text-zinc-400 mt-1">Authentic secret spice blends uncompromised by shortcuts.</p>
-              </div>
-              <div className="p-4 rounded-2xl bg-zinc-900/70 border border-zinc-800">
-                <h4 className="text-sm font-bold text-amber-300 font-serif-luxury">Live Tandoor & Charcoal</h4>
-                <p className="text-xs text-zinc-400 mt-1">Smoked on real lumpwood coals for unmatched aroma.</p>
-              </div>
-            </div>
-
-            <div className="pt-2 flex items-center gap-4">
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-cream-100 text-sm font-bold border border-amber-500/30 hover:border-amber-400 transition-all hover:scale-105 cursor-pointer min-h-[44px]"
-              >
-                <span>Read Our Full Story</span>
-                <ArrowRight className="w-4 h-4 text-amber-400" />
-              </Link>
-              <Link
-                href="/reservations"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-amber-300 hover:text-amber-200 transition-colors underline decoration-amber-400/40 min-h-[44px]"
-              >
-                <span>Reserve Maharaja Suite →</span>
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -516,88 +431,9 @@ export default function HomePage() {
       </section>
 
       {/* ================= 6. CHEF'S SPOTLIGHT SECTION ================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
-        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-red-950 via-[#181216] to-[#121217] border border-amber-500/40 p-8 sm:p-12 lg:p-16 shadow-2xl">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
-            {/* Left Copy */}
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-300 text-xs font-bold uppercase tracking-widest">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Chef&apos;s Signature Spotlight</span>
-              </div>
 
-              <h2 className="text-3xl sm:text-5xl font-serif-luxury font-bold text-cream-100 leading-tight">
-                Special Mutton Karahi
-                <span className="block text-2xl sm:text-3xl text-amber-400 font-serif font-normal italic mt-1">
-                  Wok-Seared Baby Goat Perfection
-                </span>
-              </h2>
-
-              <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
-                “Slow-simmered to perfection with hand-selected spices, ripe plum tomatoes, ginger slivers, and fresh green chilies in a traditional heavy cast-iron wok. The succulent meat falls tenderly off the bone while the reduced gravy clings with profound aroma.”
-              </p>
-
-              <div className="flex flex-wrap items-center gap-6 pt-2">
-                <div>
-                  <span className="text-xs text-zinc-400 uppercase tracking-wider block font-medium">Portion Price</span>
-                  <span className="text-3xl font-mono font-bold text-amber-400">Rs. 1,350</span>
-                </div>
-
-                <button
-                  onClick={() => {
-                    const muttonKarahi = MENU_ITEMS.find((d) => d.id === 'curry-2');
-                    if (muttonKarahi) {
-                      addItem(muttonKarahi, 1, 3);
-                    }
-                  }}
-                  className="px-8 py-4 rounded-2xl bg-gradient-to-r from-red-700 via-red-800 to-amber-600 hover:from-red-600 hover:to-amber-500 text-cream-100 font-bold text-sm shadow-xl shadow-red-950/60 border border-amber-400/40 hover:scale-105 transition-all flex items-center gap-3 cursor-pointer min-h-[48px]"
-                >
-                  <Flame className="w-4 h-4 text-amber-300" />
-                  <span>Order This Dish</span>
-                </button>
-              </div>
-            </div>
-
-            {/* Right Featured Dish Image with Next.js Image */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative aspect-square rounded-3xl overflow-hidden border-2 border-amber-500/40 shadow-2xl group">
-                <Image
-                  src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?q=80&w=1000&auto=format&fit=crop"
-                  alt="Special Mutton Karahi"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute top-4 right-4 bg-black/75 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-amber-300 border border-amber-500/30">
-                  🌶️🌶️🌶️ Authentic Heat
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ================= 7. INTERACTIVE TABLE RESERVATION SECTION ================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <span className="text-xs uppercase tracking-widest text-amber-400 font-bold bg-amber-500/10 px-3.5 py-1 rounded-full border border-amber-500/20 inline-block">
-            Table Reservations
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif-luxury font-bold text-cream-100">
-            Reserve Your Luxury Table
-          </h2>
-          <p className="text-sm sm:text-base text-zinc-400">
-            Book an intimate dinner table, an open-air courtyard booth, or our private Maharaja Suite with real-time confirmation.
-          </p>
-        </div>
-
-        {/* Embedded Interactive Reservation Component */}
-        <ReservationSection />
-      </section>
-
-      {/* ================= 8. SOCIAL PROOF & CUSTOMER REVIEWS CAROUSEL ================= */}
+      {/* ================= 7. SOCIAL PROOF & CUSTOMER REVIEWS CAROUSEL ================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
           <div className="flex items-center justify-center gap-1 text-amber-400 mb-1">
@@ -617,41 +453,6 @@ export default function HomePage() {
         <ReviewsCarousel />
       </section>
 
-      {/* ================= 9. GALLERY AMBIANCE TEASER ================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
-          <div>
-            <span className="text-xs uppercase tracking-widest text-amber-400 font-bold">Visual Splendor</span>
-            <h2 className="text-3xl sm:text-4xl font-serif-luxury font-bold text-cream-100">
-              The Dining Ambiance
-            </h2>
-          </div>
-          <Link href="/gallery" className="text-sm font-bold text-amber-400 hover:underline min-h-[44px] flex items-center">
-            View Complete Gallery (12+ Photos) →
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-          {GALLERY_ITEMS.slice(0, 4).map((item, index) => (
-            <div
-              key={item.id}
-              onClick={() => openLightbox(index)}
-              className="relative aspect-square rounded-2xl overflow-hidden border border-zinc-800 hover:border-amber-400/50 cursor-pointer group shadow-xl transition-all duration-300 hover:scale-[1.02]"
-            >
-              <Image
-                src={item.image}
-                alt={item.title}
-                fill
-                sizes="(max-width: 768px) 50vw, 25vw"
-                className="object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                <span className="text-xs font-semibold text-cream-100 font-serif-luxury">{item.title}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* Lightbox Modal */}
       <LightboxModal

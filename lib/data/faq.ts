@@ -3,19 +3,7 @@ import { FAQItem } from '../types';
 export const FAQ_DATA: FAQItem[] = [
   {
     id: 'faq-1',
-    category: 'General & Reservations',
-    question: 'Do you accept table reservations in advance?',
-    answer: 'Yes, we enthusiastically recommend booking your table in advance, especially for weekend evenings and festive holidays. You can reserve online through our Reservations page, or call our guest concierge at +92 300 1234567. We hold reserved tables for up to 15 minutes past your booked time.'
-  },
-  {
-    id: 'faq-2',
-    category: 'General & Reservations',
-    question: 'Do you offer private dining rooms for corporate meetings or family occasions?',
-    answer: 'Yes! Our Maharaja Private Dining Suite accommodates up to 24 guests with private audio-visual facilities, dedicated waitstaff, and tailored multi-course menu service. Contact our events team or mention Private Dining during online reservation.'
-  },
-  {
-    id: 'faq-3',
-    category: 'General & Reservations',
+    category: 'General Information',
     question: 'What are your operating hours and location?',
     answer: 'We are open Monday through Thursday & Sunday from 12:00 PM to 11:00 PM, and Friday to Saturday from 12:00 PM to 12:00 AM (midnight). We are located at Main Boulevard, Gulberg III, Lahore, Pakistan.'
   },
@@ -47,7 +35,7 @@ export const FAQ_DATA: FAQItem[] = [
     id: 'faq-8',
     category: 'Dietary & Halal',
     question: 'Can you customize spice levels or cater to dietary allergies?',
-    answer: 'Yes. While placing your order or reservation, you can specify your desired heat level (Mild, Medium, Authentic Hot, or Desi Teekha). Our menu clearly indicates allergens (Dairy, Nuts, Gluten, Shellfish), and our chefs will gladly modify recipes where possible.'
+    answer: 'Yes. While placing your order, you can specify your desired heat level (Mild, Medium, Authentic Hot, or Desi Teekha). Our menu clearly indicates allergens (Dairy, Nuts, Gluten, Shellfish), and our chefs will gladly modify recipes where possible.'
   },
   {
     id: 'faq-9',
@@ -55,16 +43,4 @@ export const FAQ_DATA: FAQItem[] = [
     question: 'Do you have dedicated vegetarian and vegan options?',
     answer: 'Yes, we take our vegetarian culinary heritage very seriously. We offer a dedicated vegetarian selection including Paneer Tikka, Lahori Palak Paneer, Dal Makhni, Chana Masala, and Tawa Mix Sabzi, prepared using dedicated cookware.'
   },
-  {
-    id: 'faq-10',
-    category: 'Catering & Events',
-    question: 'Do you provide live tandoor and BBQ catering for weddings and outdoor events?',
-    answer: 'Yes! Our outdoor live catering setups bring the excitement of live charcoal grills, clay tandoors, and wok-sizzling karahis directly to your venue for gatherings from 25 to 1,000+ guests.'
-  },
-  {
-    id: 'faq-11',
-    category: 'Catering & Events',
-    question: 'How far in advance should we book catering?',
-    answer: 'We recommend reserving catering dates at least 1–2 weeks in advance for regular events, and 3–4 weeks for large wedding banquets to ensure optimal scheduling and private tasting sessions.'
-  }
 ];

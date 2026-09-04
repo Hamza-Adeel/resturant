@@ -2,10 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { X, Heart, Plus, Minus, Flame, Clock, Users, Sparkles, AlertCircle, ShoppingBag, Check } from 'lucide-react';
+import { X, Plus, Minus, Flame, Clock, Users, Sparkles, AlertCircle, ShoppingBag, Check } from 'lucide-react';
 import { MenuItem, SpiceLevel } from '../lib/types';
 import { useCart } from '../context/CartContext';
-import { useFavorites } from '../context/FavoritesContext';
 
 interface ItemDetailModalProps {
   dish: MenuItem;
@@ -15,7 +14,6 @@ interface ItemDetailModalProps {
 
 export default function ItemDetailModal({ dish, isOpen, onClose }: ItemDetailModalProps) {
   const { addItem } = useCart();
-  const { isFavorite, toggleFavorite } = useFavorites();
 
   const [quantity, setQuantity] = useState(1);
   const [selectedSpice, setSelectedSpice] = useState<SpiceLevel>(dish.spiceLevel);
@@ -38,7 +36,6 @@ export default function ItemDetailModal({ dish, isOpen, onClose }: ItemDetailMod
 
   if (!isOpen) return null;
 
-  const favorited = isFavorite(dish.id);
   const totalPrice = dish.price * quantity;
 
   const handleAddToCart = () => {
@@ -78,17 +75,8 @@ export default function ItemDetailModal({ dish, isOpen, onClose }: ItemDetailMod
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#14141a] via-[#14141a]/40 to-transparent" />
 
-          {/* Close & Favorite */}
+          {/* Close */}
           <div className="absolute top-4 right-4 flex items-center gap-2 z-10">
-            <button
-              onClick={() => toggleFavorite(dish.id, dish.name)}
-              className={`p-2.5 rounded-full backdrop-blur-md transition-colors min-h-[40px] min-w-[40px] flex items-center justify-center cursor-pointer ${
-                favorited ? 'bg-red-600 text-white' : 'bg-black/60 text-zinc-300 hover:text-red-400'
-              }`}
-              aria-label="Toggle favorite"
-            >
-              <Heart className={`w-5 h-5 ${favorited ? 'fill-white' : ''}`} />
-            </button>
             <button
               onClick={onClose}
               className="p-2.5 rounded-full bg-black/60 text-zinc-300 hover:text-white hover:bg-black/80 backdrop-blur-md transition-colors min-h-[40px] min-w-[40px] flex items-center justify-center cursor-pointer"

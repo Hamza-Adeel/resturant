@@ -2,10 +2,9 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Heart, Plus, Sparkles, Flame, Eye, Leaf, ShieldAlert } from 'lucide-react';
+import { Plus, Sparkles, Flame, Eye, Leaf, ShieldAlert } from 'lucide-react';
 import { MenuItem } from '../lib/types';
 import { useCart } from '../context/CartContext';
-import { useFavorites } from '../context/FavoritesContext';
 import ItemDetailModal from './ItemDetailModal';
 
 interface DishCardProps {
@@ -14,11 +13,8 @@ interface DishCardProps {
 
 export default function DishCard({ dish }: DishCardProps) {
   const { addItem } = useCart();
-  const { isFavorite, toggleFavorite } = useFavorites();
   const [modalOpen, setModalOpen] = useState(false);
   const [isAdding, setIsAdding] = useState(false);
-
-  const favorited = isFavorite(dish.id);
 
   const handleQuickAdd = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -89,24 +85,6 @@ export default function DishCard({ dish }: DishCardProps) {
                 <span>Gluten-Free</span>
               </span>
             )}
-          </div>
-
-          {/* Top Right: Favorite Button */}
-          <div className="absolute top-3 right-3 flex items-center gap-1.5 z-10">
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                toggleFavorite(dish.id, dish.name);
-              }}
-              className={`p-2 rounded-full backdrop-blur-md transition-all duration-200 min-h-[36px] min-w-[36px] flex items-center justify-center ${
-                favorited
-                  ? 'bg-red-600 text-white shadow-lg shadow-red-950/50 scale-105'
-                  : 'bg-black/60 text-zinc-300 hover:text-red-400 hover:bg-black/80'
-              }`}
-              aria-label={favorited ? 'Remove from favorites' : 'Save to favorites'}
-            >
-              <Heart className={`w-4 h-4 ${favorited ? 'fill-white' : ''}`} />
-            </button>
           </div>
 
           {/* Bottom of Image: Category & Spice */}
