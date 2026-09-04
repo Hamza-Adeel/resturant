@@ -22,10 +22,10 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Mirch Masala | Authentic South Asian Cuisine & Royal Dining',
-  description: 'Experience authentic South Asian flavors, slow-cooked karahis, live charcoal BBQ, aromatic dum biryani, and warm traditional hospitality at Mirch Masala.',
+  title: 'Restaurant | Authentic South Asian Cuisine & Royal Dining',
+  description: 'Experience authentic South Asian flavors, slow-cooked karahis, live charcoal BBQ, aromatic dum biryani, and warm traditional hospitality at Restaurant.',
   keywords: [
-    'Mirch Masala',
+    'Restaurant',
     'Pakistani restaurant',
     'Indian restaurant',
     'Desi cuisine',
@@ -36,18 +36,18 @@ export const metadata: Metadata = {
     'Butter Chicken',
     'Online Food Delivery'
   ],
-  authors: [{ name: 'Mirch Masala Culinary Group' }],
+  authors: [{ name: 'Restaurant Culinary Group' }],
   openGraph: {
-    title: 'Mirch Masala | Authentic South Asian Cuisine & Royal Dining',
+    title: 'Restaurant | Authentic South Asian Cuisine & Royal Dining',
     description: 'Where Every Bite Tells a Story. Taste authentic dum biryani, charcoal kebabs, rich karahis, and artisanal naan in a luxury dining ambiance.',
     url: 'https://mirchmasala-restaurant.com',
-    siteName: 'Mirch Masala Restaurant',
+    siteName: 'Restaurant Restaurant',
     images: [
       {
         url: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1200&auto=format&fit=crop',
         width: 1200,
         height: 630,
-        alt: 'Mirch Masala South Asian Royal Feast'
+        alt: 'Restaurant South Asian Royal Feast'
       }
     ],
     locale: 'en_US',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mirch Masala | Authentic South Asian Cuisine',
+    title: 'Restaurant | Authentic South Asian Cuisine',
     description: 'Where Every Bite Tells a Story. Savor exquisite Pakistani and Indian culinary craftsmanship.',
     images: ['https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1200&auto=format&fit=crop'],
   },
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
 const restaurantSchema = {
   '@context': 'https://schema.org',
   '@type': 'Restaurant',
-  name: 'Mirch Masala',
+  name: 'Restaurant',
   image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1200&auto=format&fit=crop',
   description: 'Local Pakistani and South Asian restaurant offering slow-simmered curries, live charcoal grills, royal dum biryani, and warm hospitality.',
   servesCuisine: ['Pakistani', 'Indian', 'South Asian', 'Mughlai', 'Halal', 'Barbecue'],

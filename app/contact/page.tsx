@@ -54,7 +54,7 @@ export default function ContactPage() {
           Connect With Us
         </span>
         <h1 className="text-3xl sm:text-5xl font-serif-luxury font-bold text-cream-100">
-          Contact Mirch Masala
+          Contact Restaurant
         </h1>
         <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
           Have a dining query or feedback on your recent feast? We are delighted to assist you.
@@ -293,7 +293,7 @@ export default function ContactPage() {
                 <div className="space-y-2">
                   <MapPin className="w-8 h-8 text-amber-400 mx-auto" />
                   <p className="text-xs text-cream-100 font-semibold">
-                    Mirch Masala Flagship • Main Boulevard Gulberg III, Lahore
+                    Restaurant Flagship • Main Boulevard Gulberg III, Lahore
                   </p>
                   <p className="text-[11px] text-zinc-500">
                     Complimentary Valet Parking available at main entrance.

@@ -184,7 +184,7 @@ export default function OrderTrackerModal({ order, isOpen, onClose }: OrderTrack
             </div>
           ) : (
             <div className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-300">
-              <strong className="text-amber-300">Pickup Location:</strong> Mirch Masala Flagship, Main Boulevard, Gulberg III, Lahore. Please present your Order #{order.orderId} at the pickup counter.
+              <strong className="text-amber-300">Pickup Location:</strong> Restaurant Flagship, Main Boulevard, Gulberg III, Lahore. Please present your Order #{order.orderId} at the pickup counter.
             </div>
           )}
 

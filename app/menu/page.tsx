@@ -116,7 +116,7 @@ function MenuContent() {
           Authentic South Asian Menu
         </span>
         <h1 className="text-3xl sm:text-5xl font-serif-luxury font-bold text-cream-100">
-          The Mirch Masala Catalog
+          The Restaurant Catalog
         </h1>
         <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
           Explore over 40+ handcrafted delicacies. Slow-braised karahis, live charcoal grills, royal dum biryanis, and artisanal clay oven flatbreads.

@@ -156,7 +156,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'bbq-5',
-    name: 'Grand Mirch Masala Mixed Platter',
+    name: 'Grand Restaurant Mixed Platter',
     urduName: 'گرانڈ مکس گرل پلیٹر',
     category: 'BBQ & Grills',
     description: 'The ultimate charcoal feast: 2 Seekh Kebabs, 4 Chicken Tikka, 4 Malai Boti, 2 Mutton Chops, 2 Fish Tikka, and Roghni Naan.',
@@ -273,7 +273,7 @@ export const MENU_ITEMS: MenuItem[] = [
   // ================= BIRYANI & RICE =================
   {
     id: 'rice-1',
-    name: 'Royal Mirch Masala Chicken Biryani',
+    name: 'Royal Restaurant Chicken Biryani',
     urduName: 'شاہی چکن دم بریانی',
     category: 'Biryani & Rice',
     description: 'Long-grain aged Basmati rice layered with succulent marinated chicken, saffron-infused milk, caramelized onions, kewra water, and whole spices sealed with dough.',
@@ -695,7 +695,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'drk-4',
-    name: 'Mirch Masala Mint Lemonade Margarita',
+    name: 'Restaurant Mint Lemonade Margarita',
     urduName: 'منٹ مارگریٹا لیمونیڈ',
     category: 'Drinks',
     description: 'Crushed ice beverage blended with fresh garden mint leaves, freshly squeezed lime juice, black salt, and sparkling soda.',

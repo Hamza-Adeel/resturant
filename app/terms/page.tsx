@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { FileText } from 'lucide-react';
 
 export const metadata = {
-  title: 'Terms & Conditions | Mirch Masala Restaurant',
+  title: 'Terms & Conditions | Restaurant Restaurant',
   description: 'Review our terms of service, allergen notices, and online ordering terms.'
 };
 
@@ -20,7 +20,7 @@ export default function TermsPage() {
           Terms & Conditions
         </h1>
         <p className="text-xs text-zinc-400">
-          Last Updated: February 2026 • Mirch Masala Hospitality Rules
+          Last Updated: February 2026 • Restaurant Hospitality Rules
         </p>
       </div>
 
@@ -74,7 +74,7 @@ export default function TermsPage() {
             5. Intellectual Property & Brand Rights
           </h2>
           <p>
-            The name &ldquo;Mirch Masala&rdquo;, our logo wordmark, bespoke food imagery, recipes, website layout, and brand styling are protected intellectual properties of the Mirch Masala Restaurant Group. Unauthorized commercial duplication is prohibited.
+            The name &ldquo;Restaurant&rdquo;, our logo wordmark, bespoke food imagery, recipes, website layout, and brand styling are protected intellectual properties of the Restaurant Restaurant Group. Unauthorized commercial duplication is prohibited.
           </p>
         </section>
       </div>

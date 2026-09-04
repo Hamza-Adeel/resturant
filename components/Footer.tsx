@@ -17,7 +17,7 @@ export default function Footer() {
       return;
     }
     setSubscribed(true);
-    showToast('Subscribed to Mirch Masala 🌟', 'You will receive our chef specials and exclusive private tasting invites.', 'success');
+    showToast('Subscribed to Restaurant 🌟', 'You will receive our chef specials and exclusive private tasting invites.', 'success');
   };
 
   return (
@@ -38,7 +38,7 @@ export default function Footer() {
               <span>The Royal Newsletter</span>
             </div>
             <h3 className="text-2xl sm:text-3xl font-serif-luxury font-bold text-cream-100 tracking-tight mb-2">
-              Get the latest from Mirch Masala.
+              Get the latest from Restaurant.
             </h3>
             <p className="text-sm text-zinc-300 mb-6 leading-relaxed">
               Subscribe to receive seasonal tasting menus, secret chef recipes, and exclusive invitations to our weekend live charcoal barbecue nights.
@@ -47,7 +47,7 @@ export default function Footer() {
             {subscribed ? (
               <div className="flex items-center gap-3 p-4 rounded-xl bg-amber-500/15 border border-amber-500/40 text-amber-200">
                 <CheckCircle2 className="w-5 h-5 text-amber-400 shrink-0" />
-                <span className="text-sm font-medium">Thank you for subscribing! Welcome to the Mirch Masala inner circle.</span>
+                <span className="text-sm font-medium">Thank you for subscribing! Welcome to the Restaurant inner circle.</span>
               </div>
             ) : (
               <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-lg">
@@ -84,7 +84,7 @@ export default function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-serif-luxury font-bold tracking-wider text-cream-100 group-hover:text-amber-300 transition-colors">
-                  MIRCH MASALA
+                  Restaurant
                 </span>
                 <span className="text-[9px] tracking-[0.25em] text-amber-400 uppercase font-semibold">
                   Authentic South Asian
@@ -235,7 +235,7 @@ export default function Footer() {
 
         {/* Bottom Legal & Copyright Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
-          <p>© 2026 Mirch Masala. All rights reserved. Authentic South Asian Dining.</p>
+          <p>© 2026 Restaurant. All rights reserved. Authentic South Asian Dining.</p>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="hover:text-amber-300 transition-colors">
               Privacy Policy

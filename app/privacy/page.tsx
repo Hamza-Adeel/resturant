@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { ShieldCheck } from 'lucide-react';
 
 export const metadata = {
-  title: 'Privacy Policy | Mirch Masala Restaurant',
-  description: 'Understand how Mirch Masala protects your personal information and online ordering data.'
+  title: 'Privacy Policy | Restaurant Restaurant',
+  description: 'Understand how Restaurant protects your personal information and online ordering data.'
 };
 
 export default function PrivacyPage() {
@@ -20,7 +20,7 @@ export default function PrivacyPage() {
           Privacy Policy
         </h1>
         <p className="text-xs text-zinc-400">
-          Last Updated: February 2026 • Mirch Masala Dining Group
+          Last Updated: February 2026 • Restaurant Dining Group
         </p>
       </div>
 
@@ -31,7 +31,7 @@ export default function PrivacyPage() {
             <span>1. Information We Collect</span>
           </h2>
           <p>
-            When you interact with the Mirch Masala website, place an online delivery order, or subscribe to our newsletter, we collect certain personal identification details to deliver our services, including:
+            When you interact with the Restaurant website, place an online delivery order, or subscribe to our newsletter, we collect certain personal identification details to deliver our services, including:
           </p>
           <ul className="list-disc pl-5 space-y-1 text-zinc-400">
             <li><strong>Contact Details:</strong> Full Name, Email Address, and Phone Number.</li>

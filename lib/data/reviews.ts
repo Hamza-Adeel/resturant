@@ -19,7 +19,7 @@ export const REVIEWS_DATA: ReviewItem[] = [
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop',
     rating: 5,
     date: 'February 12, 2026',
-    comment: 'Mirch Masala has quickly become our favorite place for weekly family dinners. The ambiance is regal yet welcoming, the staff is extremely courteous, and the Garlic Butter Naan with Butter Chicken is the best in the city.',
+    comment: 'Restaurant has quickly become our favorite place for weekly family dinners. The ambiance is regal yet welcoming, the staff is extremely courteous, and the Garlic Butter Naan with Butter Chicken is the best in the city.',
     dishRecommended: 'Velvety Butter Chicken & Garlic Naan',
     verified: true
   },
@@ -31,7 +31,7 @@ export const REVIEWS_DATA: ReviewItem[] = [
     rating: 5,
     date: 'January 29, 2026',
     comment: 'The Grand Mixed Grill Platter was outstanding! The Seekh Kebabs were juicy, the Malai Boti was creamy and velvety, and the mint chutney brought everything together. Also, online ordering and table booking is delightfully seamless.',
-    dishRecommended: 'Grand Mirch Masala Mixed Platter',
+    dishRecommended: 'Grand Restaurant Mixed Platter',
     verified: true
   },
   {

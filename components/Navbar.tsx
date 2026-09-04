@@ -61,7 +61,7 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col">
               <span className="text-xl sm:text-2xl font-serif-luxury font-bold tracking-wider text-cream-100 group-hover:text-amber-300 transition-colors leading-tight">
-                MIRCH MASALA
+                Restaurant
               </span>
               <span className="text-[9px] tracking-[0.25em] text-amber-400 uppercase font-semibold">
                 Royal South Asian Dining
