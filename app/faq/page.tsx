@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { HelpCircle, ChevronDown, Search, MessageSquare, Phone, ArrowRight, Sparkles } from 'lucide-react';
+import { HelpCircle, ChevronDown, Search, MessageSquare, Phone } from 'lucide-react';
 import { FAQ_DATA } from '../../lib/data/faq';
 
 export default function FAQPage() {

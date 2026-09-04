@@ -57,7 +57,7 @@ export default function ContactPage() {
           Contact Mirch Masala
         </h1>
         <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
-          Have a dining query, feedback on your recent feast, or planning a custom corporate banquet? We are delighted to assist you.
+          Have a dining query or feedback on your recent feast? We are delighted to assist you.
         </p>
       </div>
 

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, startTransition, useContext, useState, useEffect, ReactNode } from 'react';
 import { CartItem, MenuItem, SpiceLevel } from '../lib/types';
 import { useToast } from './ToastContext';
 
@@ -50,11 +50,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
     try {
       const savedCart = localStorage.getItem('mirch_masala_cart');
       if (savedCart) {
-        setItems(JSON.parse(savedCart));
+        startTransition(() => setItems(JSON.parse(savedCart)));
       }
       const savedType = localStorage.getItem('mirch_masala_order_type');
       if (savedType === 'delivery' || savedType === 'pickup') {
-        setOrderType(savedType);
+        startTransition(() => setOrderType(savedType));
       }
     } catch (e) {
       console.error('Error loading cart from storage', e);

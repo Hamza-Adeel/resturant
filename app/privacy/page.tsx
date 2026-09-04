@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ShieldCheck, Lock, Eye, FileText } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
 
 export const metadata = {
   title: 'Privacy Policy | Mirch Masala Restaurant',

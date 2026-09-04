@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import Image from 'next/image';
 import {
   Search,
   SlidersHorizontal,
@@ -11,13 +12,14 @@ import {
   List,
   Utensils,
   ArrowUpDown,
-  CheckCircle2,
   X
 } from 'lucide-react';
 import { MENU_ITEMS, MENU_CATEGORIES } from '../../lib/data/menu';
 import { MenuCategory } from '../../lib/types';
 import DishCard from '../../components/DishCard';
 import { useCart } from '../../context/CartContext';
+
+type SortOption = 'featured' | 'price-asc' | 'price-desc' | 'spicy';
 
 function MenuContent() {
   const { addItem } = useCart();
@@ -38,7 +40,7 @@ function MenuContent() {
 
   // Filter & Sort Logic
   const filteredDishes = useMemo(() => {
-    let list = MENU_ITEMS.filter((dish) => {
+    const list = MENU_ITEMS.filter((dish) => {
       // Category match
       if (selectedCategory !== 'All' && dish.category !== selectedCategory) {
         return false;
@@ -151,7 +153,7 @@ function MenuContent() {
               <ArrowUpDown className="w-4 h-4 text-amber-400" />
               <select
                 value={sortBy}
-                onChange={(e) => setSortBy(e.target.value as any)}
+                onChange={(e) => setSortBy(e.target.value as SortOption)}
                 className="bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-xs font-semibold text-cream-100 focus:outline-none focus:border-amber-400"
               >
                 <option value="featured">Featured Order</option>
@@ -318,9 +320,11 @@ function MenuContent() {
               className="p-4 sm:p-5 rounded-2xl bg-[#121217] border border-zinc-800 hover:border-amber-500/40 transition-all flex flex-col sm:flex-row items-center gap-5 justify-between shadow-lg"
             >
               <div className="flex items-center gap-4 w-full sm:w-auto">
-                <img
+                <Image
                   src={dish.image}
                   alt={dish.name}
+                  width={96}
+                  height={96}
                   className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover shrink-0 border border-zinc-800"
                 />
                 <div className="space-y-1 flex-1">

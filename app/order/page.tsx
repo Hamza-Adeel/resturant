@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import confetti from 'canvas-confetti';
 import {
@@ -10,15 +11,10 @@ import {
   CreditCard,
   Banknote,
   Smartphone,
-  ShieldCheck,
   Plus,
   Minus,
   Trash2,
   Tag,
-  ArrowRight,
-  CheckCircle2,
-  Clock,
-  Sparkles,
   Utensils
 } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
@@ -395,9 +391,11 @@ export default function OrderPage() {
               ) : (
                 items.map((item, idx) => (
                   <div key={idx} className="p-3 rounded-2xl bg-zinc-900 border border-zinc-800/80 flex items-center gap-3">
-                    <img
+                    <Image
                       src={item.dish.image}
                       alt={item.dish.name}
+                      width={56}
+                      height={56}
                       className="w-14 h-14 rounded-xl object-cover shrink-0 border border-zinc-800"
                     />
                     <div className="flex-1 min-w-0">
@@ -512,7 +510,7 @@ export default function OrderPage() {
               {popularAdds.map((pop) => (
                 <div key={pop.id} className="flex items-center justify-between text-xs p-2 rounded-xl bg-zinc-900 border border-zinc-800">
                   <div className="flex items-center gap-2.5">
-                    <img src={pop.image} alt={pop.name} className="w-9 h-9 rounded-lg object-cover" />
+                    <Image src={pop.image} alt={pop.name} width={36} height={36} className="w-9 h-9 rounded-lg object-cover" />
                     <div>
                       <p className="font-semibold text-cream-100">{pop.name}</p>
                       <p className="text-amber-400 font-mono text-[11px]">Rs. {pop.price}</p>

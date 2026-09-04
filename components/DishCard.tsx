@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Plus, Sparkles, Flame, Eye, Leaf, ShieldAlert } from 'lucide-react';
+import { Plus, Sparkles, Flame, Eye, Leaf } from 'lucide-react';
 import { MenuItem } from '../lib/types';
 import { useCart } from '../context/CartContext';
 import ItemDetailModal from './ItemDetailModal';

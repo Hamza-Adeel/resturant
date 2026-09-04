@@ -4,34 +4,24 @@ import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
-  Flame,
   ShoppingBag,
   ArrowRight,
   Star,
   Sparkles,
   ShieldCheck,
-  Award,
   ChevronDown,
   Clock,
   MapPin,
   Utensils,
   Search,
-  Leaf,
-  CheckCircle2,
-  Phone
+  Leaf
 } from 'lucide-react';
 import { MENU_ITEMS, MENU_CATEGORIES } from '../lib/data/menu';
-import { GALLERY_ITEMS } from '../lib/data/gallery';
-import { SPECIAL_OFFERS } from '../lib/data/offers';
 import { MenuCategory } from '../lib/types';
 import DishCard from '../components/DishCard';
-import LightboxModal from '../components/LightboxModal';
 import ReviewsCarousel from '../components/ReviewsCarousel';
-import { useCart } from '../context/CartContext';
 
 export default function HomePage() {
-  const { addItem } = useCart();
-
   // Menu Preview State
   const [activeCategory, setActiveCategory] = useState<MenuCategory>('All');
   const [searchQuery, setSearchQuery] = useState('');
@@ -40,10 +30,6 @@ export default function HomePage() {
   const [filterGlutenFreeOnly, setFilterGlutenFreeOnly] = useState(false);
   const [filterChefSpecialOnly, setFilterChefSpecialOnly] = useState(false);
   const [filterSpicyOnly, setFilterSpicyOnly] = useState(false);
-
-  // Gallery Lightbox State
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   // Filtered dishes for responsive interactive menu grid
   const filteredDishes = useMemo(() => {
@@ -76,15 +62,10 @@ export default function HomePage() {
     return MENU_ITEMS.filter((d) => d.isChefSpecial || d.isPopular).slice(0, 6);
   }, []);
 
-  const openLightbox = (index: number) => {
-    setLightboxIndex(index);
-    setLightboxOpen(true);
-  };
-
   return (
-    <div className="space-y-20 sm:space-y-28 lg:space-y-36">
+    <div>
       {/* ================= 1. HERO SECTION & ABOVE-THE-FOLD CTAS ================= */}
-      <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden pt-12 pb-24 md:py-32">
+      <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden px-4 py-12 md:py-20">
         {/* Full-bleed Cinematic Atmospheric Food Imagery with Next.js Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -102,7 +83,7 @@ export default function HomePage() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left w-full">
+        <div className="relative z-10 max-w-7xl mx-auto sm:px-2 lg:px-4 text-center sm:text-left w-full">
           <div className="max-w-3xl space-y-7">
             {/* Floating Operational Status & Location Info Badge */}
             <div className="inline-flex flex-wrap items-center gap-2.5 px-4 py-2 rounded-full bg-[#161622]/90 border border-amber-500/35 shadow-xl shadow-black/60 backdrop-blur-md">
@@ -179,62 +160,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ================= 2. RESTAURANT STATS & TRUST STRIP ================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 sm:-mt-20 relative z-20">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 p-6 sm:p-8 rounded-3xl bg-card-gradient border border-amber-500/25 shadow-2xl backdrop-blur-xl">
-          <div className="flex flex-col items-center sm:items-start text-center sm:text-left p-3">
-            <span className="text-3xl sm:text-4xl lg:text-5xl font-serif-luxury font-bold text-gold-gradient">
-              15+
-            </span>
-            <span className="text-xs sm:text-sm font-semibold text-cream-100 uppercase tracking-wider mt-1">
-              Years of Excellence
-            </span>
-            <p className="text-xs text-zinc-400 mt-1 hidden sm:block">
-              Preserving traditional South Asian culinary heritage since 2011.
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center sm:items-start text-center sm:text-left p-3 border-l border-zinc-800/80">
-            <span className="text-3xl sm:text-4xl lg:text-5xl font-serif-luxury font-bold text-gold-gradient">
-              50+
-            </span>
-            <span className="text-xs sm:text-sm font-semibold text-cream-100 uppercase tracking-wider mt-1">
-              Artisanal Dishes
-            </span>
-            <p className="text-xs text-zinc-400 mt-1 hidden sm:block">
-              Slow-simmered royal curries, live charcoal grills, and naan.
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center sm:items-start text-center sm:text-left p-3 border-l border-zinc-800/80">
-            <span className="text-3xl sm:text-4xl lg:text-5xl font-serif-luxury font-bold text-gold-gradient flex items-center">
-              4.9★
-            </span>
-            <span className="text-xs sm:text-sm font-semibold text-cream-100 uppercase tracking-wider mt-1">
-              Google Rating
-            </span>
-            <p className="text-xs text-zinc-400 mt-1 hidden sm:block">
-              Rated exceptional by over 2,400+ satisfied dine-in guests.
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center sm:items-start text-center sm:text-left p-3 border-l border-zinc-800/80">
-            <span className="text-3xl sm:text-4xl lg:text-5xl font-serif-luxury font-bold text-gold-gradient">
-              100%
-            </span>
-            <span className="text-xs sm:text-sm font-semibold text-cream-100 uppercase tracking-wider mt-1">
-              Fresh Daily Halal
-            </span>
-            <p className="text-xs text-zinc-400 mt-1 hidden sm:block">
-              Hand-ground whole spices and premium Halal cuts prepared daily.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* ================= 3. TASTE OUR SIGNATURES ================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
             <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-amber-400 font-bold mb-2">
               <Sparkles className="w-4 h-4" />
@@ -266,8 +194,8 @@ export default function HomePage() {
       </section>
 
       {/* ================= 5. RESPONSIVE MENU UI & TABBED FILTER ================= */}
-      <section id="menu-catalog" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16 scroll-mt-24">
-        <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
+      <section id="menu-catalog" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 scroll-mt-24">
+        <div className="text-center max-w-3xl mx-auto mb-8 space-y-3">
           <span className="text-xs uppercase tracking-widest text-amber-400 font-bold bg-amber-500/10 px-3.5 py-1 rounded-full border border-amber-500/20 inline-block">
             Interactive Gastronomy
           </span>
@@ -280,7 +208,7 @@ export default function HomePage() {
         </div>
 
         {/* Search & Dietary Filter Bar */}
-        <div className="p-4 sm:p-5 rounded-3xl bg-[#14141d] border border-zinc-800 mb-8 space-y-4 shadow-xl">
+        <div className="p-4 sm:p-5 rounded-3xl bg-[#14141d] border border-zinc-800 mb-6 space-y-4 shadow-xl">
           <div className="flex flex-col lg:flex-row gap-3">
             {/* Search Input */}
             <div className="relative flex-1">
@@ -419,7 +347,7 @@ export default function HomePage() {
         )}
 
         {/* Full Menu Link */}
-        <div className="mt-12 text-center">
+        <div className="mt-8 text-center">
           <Link
             href="/menu"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-zinc-900 hover:bg-zinc-800 border border-amber-500/30 text-amber-300 hover:text-amber-200 font-bold text-sm transition-all hover:scale-105 shadow-xl min-h-[48px]"
@@ -430,12 +358,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ================= 6. CHEF'S SPOTLIGHT SECTION ================= */}
-
-
       {/* ================= 7. SOCIAL PROOF & CUSTOMER REVIEWS CAROUSEL ================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <div className="text-center max-w-3xl mx-auto mb-8 space-y-3">
           <div className="flex items-center justify-center gap-1 text-amber-400 mb-1">
             {[...Array(5)].map((_, i) => (
               <Star key={i} className="w-5 h-5 fill-amber-400" />
@@ -453,15 +378,6 @@ export default function HomePage() {
         <ReviewsCarousel />
       </section>
 
-
-      {/* Lightbox Modal */}
-      <LightboxModal
-        items={GALLERY_ITEMS}
-        currentIndex={lightboxIndex}
-        isOpen={lightboxOpen}
-        onClose={() => setLightboxOpen(false)}
-        onNavigate={(idx) => setLightboxIndex(idx)}
-      />
     </div>
   );
 }

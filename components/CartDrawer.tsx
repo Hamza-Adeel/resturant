@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { X, Trash2, Plus, Minus, ShoppingBag, ArrowRight, Sparkles, Truck, Store, Tag } from 'lucide-react';
 import { useCart } from '../context/CartContext';
@@ -170,9 +171,11 @@ export default function CartDrawer() {
                   key={`${item.dish.id}-${idx}`}
                   className="p-3 rounded-2xl bg-zinc-900/90 border border-zinc-800/80 flex gap-3 items-center group hover:border-zinc-700 transition-all"
                 >
-                  <img
+                  <Image
                     src={item.dish.image}
                     alt={item.dish.name}
+                    width={64}
+                    height={64}
                     className="w-16 h-16 rounded-xl object-cover shrink-0 border border-zinc-800"
                   />
                   <div className="flex-1 min-w-0">

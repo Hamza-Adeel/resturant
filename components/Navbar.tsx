@@ -12,7 +12,6 @@ export default function Navbar() {
   
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [announcementDismissed, setAnnouncementDismissed] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,11 +20,6 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [pathname]);
 
   // Prevent background scroll when mobile drawer is open
   useEffect(() => {
@@ -83,6 +77,7 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
                   className={`px-3.5 py-2 rounded-xl text-sm font-medium tracking-wide transition-all duration-200 relative min-h-[44px] flex items-center ${
                     isActive
                       ? 'text-amber-300 bg-amber-500/10 font-semibold'
@@ -103,7 +98,7 @@ export default function Navbar() {
             {/* Cart Trigger */}
             <button
               onClick={() => setIsOpen(true)}
-              className="relative px-3 py-2.5 rounded-xl bg-zinc-900/90 hover:bg-zinc-800 text-amber-300 border border-amber-500/20 hover:border-amber-400/50 transition-all flex items-center gap-2 min-h-[44px] cursor-pointer"
+              className="relative hidden lg:flex px-3 py-2.5 rounded-xl bg-zinc-900/90 hover:bg-zinc-800 text-amber-300 border border-amber-500/20 hover:border-amber-400/50 transition-all items-center gap-2 min-h-[44px] cursor-pointer"
               aria-label={`Shopping Cart with ${itemCount} items`}
             >
               <ShoppingBag className="w-5 h-5 text-amber-400" />
@@ -156,6 +151,7 @@ export default function Navbar() {
 
                 <Link
                   href="/menu"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-amber-300 font-semibold text-sm border border-amber-500/30 min-h-[48px]"
                 >
                   <span>Explore Menu</span>

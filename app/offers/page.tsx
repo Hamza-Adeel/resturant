@@ -1,15 +1,16 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
-import { Tag, Sparkles, Flame, CheckCircle2, Copy, Check, Clock, ArrowRight } from 'lucide-react';
+import { CheckCircle2, Copy, Check, Clock, ArrowRight } from 'lucide-react';
 import { SPECIAL_OFFERS } from '../../lib/data/offers';
 import { useToast } from '../../context/ToastContext';
 import { useCart } from '../../context/CartContext';
 
 export default function OffersPage() {
   const { showToast } = useToast();
-  const { applyPromoCode, setIsOpen } = useCart();
+  const { applyPromoCode } = useCart();
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
 
   const handleCopyCode = (code: string) => {
@@ -50,9 +51,11 @@ export default function OffersPage() {
             >
               {/* Image & Floating Badge */}
               <div className="relative aspect-[16/9] w-full overflow-hidden bg-zinc-900">
-                <img
+                <Image
                   src={offer.image}
                   alt={offer.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">

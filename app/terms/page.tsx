@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { FileText, ShieldAlert, CheckCircle2 } from 'lucide-react';
+import { FileText } from 'lucide-react';
 
 export const metadata = {
   title: 'Terms & Conditions | Mirch Masala Restaurant',
